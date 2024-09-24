@@ -133,7 +133,7 @@
     echo "<pre>".print_r(array_merge($arr1,$arr2),true)."</pre>" , "<br/>";
     echo "<pre>".print_r(array_merge($arr1,$arr2,$arr3),true)."</pre>" , "<hr/>";
 
-
+// => array_keys(array)
 // => array_keys(array,value) Function 
 // => array_keys(array,value,strict)
 
@@ -244,6 +244,17 @@
     echo "<pre>".print_r($colors,true)."</pre>" , "<hr/>"; 
 
 
+// => array_shift(array) function ;
+    $colors = ["red","green","blue"];
+    array_shift($colors);
+    echo "<pre>".print_r($colors,true)."</pre>" , "<hr/>";
+
+
+    $colors = ["a"=>"red","b"=>"green","c"=>"blue","d"=>"violet"];
+    array_shift($colors);
+    echo "<pre>".print_r($colors,true)."</pre>" , "<hr/>";
+
+
 
 // => array_unshift(array,value1,value2,value3,........) Function 
     $colors = ["red","green","blue"];
@@ -290,6 +301,50 @@
     echo "<pre>".print_r(array_slice($candycolors,2,5,true),true)."</pre>" , "<hr/>"; // true change
 
 
+// array_splice(array,index) Function 
+// array_splice(array,index,length) Function;
+// array_splice(array,indexlength,array) Function;
+$shirtcolors = ["red","green","blue","yellow","pink"];
+echo "<pre>".print_r(array_slice($shirtcolors,0),true)."</pre>" , "<hr/>"; 
+echo "<pre>".print_r(array_slice($shirtcolors,2),true)."</pre>" , "<hr/>"; 
+
+echo "<pre>".print_r(array_slice($shirtcolors,0,2),true)."</pre>" , "<hr/>"; 
+echo "<pre>".print_r(array_slice($shirtcolors,2,2),true)."</pre>" , "<hr/>"; 
+echo "<pre>".print_r(array_slice($shirtcolors,2,5),true)."</pre>" , "<hr/>";
+
+
+$males = ["aung aung","maung maung","kyaw kyaw","zaw zaw","naung naung"];
+$females = ["su su","yu yu","nu nu"];
+// array_splice($males,0,2,$females);
+// echo "<pre>".print_r($males,true)."</pre>" , "<hr/>";
+
+// array_splice($males,0,3,$females);
+// echo "<pre>".print_r($males,true)."</pre>" , "<hr/>";
+
+
+array_splice($males,1,3,$females);
+echo "<pre>".print_r($males,true)."</pre>" , "<hr/>";
+
+
+// =>array_sum(array) function
+$nums = [10,20,30,40,50];
+echo array_sum($nums) , "<hr/>"; // 150
+
+$nums = [10,20,30,"40",-50];
+echo array_sum($nums) , "<hr/>"; // 50
+
+$nums = ["a"=>10.2,"b"=>20.3,"c"=>30.3];
+echo array_sum($nums) , "<hr/>"; // 60.8
+
+
+
+// array_unque();
+$num = [10,20,30,50,10,30,60,70,80,10];
+echo "<pre>".print_r(array_unique($num),true)."</pre>" , "<hr/>";
+
+$colors = ["a"=>"red","b"=>"green","c"=>"blue","d"=>"red","e"=>"blue"];
+echo "<pre>".print_r(array_unique($colors),true)."</pre>" , "<hr/>";
+
 
 
 // useful [note different between unset & array_values]
@@ -312,13 +367,6 @@
 
 
 
-
-
-
-
-
-
-
 // => array_walk(array,callbackfunction,parameter) Function [making looping for fast]
     $colors = ["a"=>"red","b"=>"green","c"=>"blue","d"=>"pink","e"=>"violet"];
 
@@ -337,6 +385,7 @@
 
     echo "<hr/>";
 
+// using passing by refference
     function myfunthree(&$val){
         // $val = "orange";
         // return $val = "orange";
@@ -346,6 +395,36 @@
 
     array_walk($colors,"myfunthree");
     echo "<pre>".print_r(array_values($colors),true)."</pre>" , "<hr/>"; //
+
+
+    
+// => compact(var1,var2,var3) function 
+
+$name = "Aung Aung";
+$age = "25";
+$city = "Yangon";
+
+$result = compact("name","age","city");
+echo "<pre>".print_r($result,true)."</pre>" , "<hr/>";
+
+
+
+
+// range(start,end) function ;
+// rande(start,end,step) function
+
+$num1 = range(0,5);
+echo "<pre>".print_r($num1,true)."</pre>", "<hr/>";
+
+$num2 = range(0,50,10);
+echo "<pre>".print_r($num2,true)."</pre>", "<hr/>";
+
+$num3 = range("a","z");
+echo "<pre>".print_r($num3,true)."</pre>", "<hr/>";
+
+$num4 = range("f","a");
+echo "<pre>".print_r($num4,true)."</pre>", "<hr/>";
+
 
 
 

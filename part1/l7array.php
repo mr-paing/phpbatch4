@@ -21,6 +21,7 @@ echo count($colors);
 print_r($colors,false); //default is false
 echo "<pre>".print_r($colors,true)."</pre>"; // true used for to know html code
 
+// add and override 
 $colors[6] = "gray";
 $colors[7] = "stone";
 $colors[8] = "skyblue";

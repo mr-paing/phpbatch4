@@ -51,7 +51,7 @@ echo "<br/>";
         $result = $num3 + $num4;
 
         echo "this is result , print by funthree = $result";
-    }
+    } 
 
     funthree(); // this is result , print by funthree = 700
 
@@ -63,7 +63,7 @@ echo "<br/>";
 // => Super Global variable / $GLOBALS[""]
 
     //global variable နည်းတူ super globale varaible ကိုလည်း အသုံးပြု၍ ရသည်။
-    //သတိထားရန်မှာ ယင်းကို global တွင် ေကြငြာ၍ local scope မှ ေခါ်၍ အသုံးနိုင်သည် ၊ သို့ေသာ် global scope တွင် အသုံးပြု၍ မရနိုင်ပါ။
+    //သတိထားရန်မှာ ယင်းကို local တွင် ေကြငြာ၍ global scope မှ ေခါ်၍ အသုံးနိုင်သည် ၊ သို့ေသာ် local scope တွင် အသုံးပြု၍ မရနိုင်ပါ။
 
     $num5 = 500;
     $num6 = 600;

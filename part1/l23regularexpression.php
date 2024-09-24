@@ -80,7 +80,7 @@ $result = preg_match("/n{1}/",$string); // true = 1
 $result = preg_match("/n{2}/",$string); // true = 1
 $result = preg_match("/n{3}/",$string); // false = 0
 $result = preg_match("/n{2,3}/",$string); // true = 1
-$result = preg_match("/n{2,}/",$string); // true = 1
+$result = preg_match("/n{2,}/",$string); // true = 1 unlimite but at least one
 $result = preg_match("/n{\s}/",$string); // false = 0
 
 $string = "V8 Engine";
@@ -142,7 +142,7 @@ $result = preg_match("/<i>(.*)<\/i>/",$string); // true = 1
 
 
 $string = "admin@gami.com";
-$result = preg_match("/^[a-z,A-Z]+@[a-z]+\.\w{3}/",$string); //true = 1
+$result = preg_match("/^[a-z,A-Z]+@[a-z]+\.\w{3}/",$string); //true = 1 // to check email address or not
 
 
 //preg_replace(pattern,replacement,string);
@@ -228,10 +228,18 @@ echo "<pre>".print_r($result,true)."</pre>";
 
 // Lookahead & Lookbehind 
 // (?=) positive Lookahead (or) regex lookahead = right hand side
-// (?<=) positive Lookbehind (or) regex lookahead = right hand side
+// (?<=) positive Lookbehind (or) regex lookbehind = left hand side
 
-// (?!) positive Lookahead (or) regex lookahead 
-// (?<!) positive Lookbehind (or) regex lookahead 
+// (?!) negaive Lookahead (or) regex lookahead 
+// (?<!) negative Lookbehind (or) regex lookbehind 
+
+$string = "aungkyaw@cisco.com";
+$result = preg_match("/@(?=cisco)/",$string); // true (positive lookahead)
+$result = preg_match("/(?<=@)cisco/",$string); // true (positive lookbehind)
+
+$result = preg_match("/@(?!cisco)/",$string); // false (negative lookahead)
+$result = preg_match("/(?<!@)cisco/",$string); // false (negative lookbehind)
+echo $result;
 
 ?>
 
@@ -240,9 +248,9 @@ echo "<pre>".print_r($result,true)."</pre>";
     ^ [shift + 6] must be start (case sensitive) , caret or circumflex.
     i no case sensitive 
     [] range a-z A-Z 0-9
-    m+ must contain al leaset one m and more 
-    m* can contain b or not and more 
-    m? can contain b or not and more 
+    m+ must contain at leaset one m and more 
+    b * can contain b or not and more 
+    b? can contain b or not and more 
     m{nth} contain (same place or couple) place m as per nth and more
     m{nth,nth} contain some place m as per nth and more
     m{nth,} contain some place m as per nth and more

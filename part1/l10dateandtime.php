@@ -30,7 +30,7 @@ echo "<hr/>";
 echo "This is 0 = ". $getdate["0"]; //1709654913
 
 $time = time();
-echo "This is 0 = ". $getdate["0"]; //1709654913
+echo "This is 0 = ". $time; //1709654913
 
 echo "<hr/>";
 
@@ -114,8 +114,47 @@ $date = date("z",$time);
 echo "This is format z " . $date; //64 - day of year
 
 
+echo "<hr/>";
+
+// => date_create(time,optional timezone) with date_format()
+    // eg :: date_create(timestamp,timezone_open("Asia/Yangon"));
+
+    $date1 = date_create("10-01-2024");
+    $date2 = date_create("20-05-2024");
+
+    echo date_format($date1,"Y/m/d"); // 2023/01/10
+echo "<br/>";
+    echo date_format($date2,"Y-m-d"); // 2024-05-20     04 or 4 is ok
+
+echo "<br/>";
+
+    $diffone = date_diff($date2,$date1);
+    echo $diffone->format("%d days");  // 10 days
+    echo $diffone->format("%m months"); // 4 months 
+    echo $diffone->format("%y year"); // 0 year
+    echo $diffone->format("%Y year"); // 00 year.
+
+echo "<br/>";
+
+    $getdate = getdate();
+    var_dump($getdate); echo "<br/>";
+            // d-m-y
+    $date3 = " {$getdate['mday']}-{$getdate['mon']}-{$getdate['year']} ";
+    echo $date3 , "<br/>"; // 24-9-2024
+
+    $date4 = date_create($date3);
+    echo date_format($date4,"Y-m-d") , "<br/>"; // 2024-09-24
 
 
+    $difftwo = date_diff($date4,$date2);
+    echo $difftwo->format("%d days") , "<br/>"; // 4 days
+    echo $difftwo->format("%m months") , "<br/>"; // 4 months
+    echo $difftwo->format("%y year") , "<br/>"; // 0 year
+    echo $difftwo->format("%Y year") , "<br/>"; // 00 year
+
+    echo $difftwo->format("%R%d days") , "<br/>"; // -4 days
+    echo $difftwo->format("%R%a days") , "<br/>"; // -127 days
+     
 
 ?>
 

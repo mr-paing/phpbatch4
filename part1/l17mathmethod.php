@@ -19,6 +19,34 @@
     echo "<br/>";
 
 
+    // => ceil(number) function 
+    echo ceil(32.46); //33
+    echo ceil(32.54); //33
+    echo ceil(32.44); //33
+
+    // ***Note--
+        echo ceil(-32.64); // 32
+        echo ceil(-32.34); //32
+
+    
+    // => floor(number) function 
+    echo floor(32.64); // 32
+    echo floor(32.54); // 32
+    echo floor(32.44); // 32 
+
+    // **** Note --
+     echo floor(-32.64); // 33
+     echo floor(-32.34); // 33
+
+
+
+// => max(number) function
+    echo max(2,4,20,6,8,10) , "<br/>"; //20
+    echo max(2,4,20,6,-40,8,10) , "<br/>"; //20
+    echo max(2,4,"100",20,6,-40,8,10) , "<br/>"; //100
+    echo max([2,4,"100",20,6,-40,8,10]) , "<br/>"; //100
+
+
 // => min(number) Function 
 
     echo min(2,4,20,6,8,10) , "<br/>"; //2
@@ -67,7 +95,7 @@
     echo microtime(true) , "<br/>";
 
 
-// => unitid() Function
+// => uniqid() Function
     echo uniqid() , "<br/>";
 
 

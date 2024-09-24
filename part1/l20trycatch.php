@@ -44,7 +44,7 @@ echo mynum(2,5); // Fatal error: Uncaught Exception: We don't allow over 5 power
 
 
 
-    function mycolor($color){
+    function mycolour($color){
         if($color !== "red"){
             throw new Exception("Ohh! I hate $color color");
         }
@@ -54,7 +54,7 @@ echo mynum(2,5); // Fatal error: Uncaught Exception: We don't allow over 5 power
     // echo mycolor("red");
 
     try{
-        echo mycolor("black");
+        echo mycolour("black");
     }catch(Exception $e){
         echo "You should not try with this color";  // You should not try with this color
     }
@@ -62,7 +62,7 @@ echo mynum(2,5); // Fatal error: Uncaught Exception: We don't allow over 5 power
 #or
 
     try{
-        echo mycolor("blue");
+        echo mycolour("blue");
     }catch(Exception $e){
         echo $e->getMessage();   // Ohh! I hate blue color
     }
@@ -70,7 +70,7 @@ echo mynum(2,5); // Fatal error: Uncaught Exception: We don't allow over 5 power
 #or
 
     try{
-        echo mycolor("red");
+        echo mycolour("red");
     }catch(Exception $e){
         echo $e->getMessage();   // Yep! My fav color is red
     }
@@ -79,11 +79,10 @@ echo mynum(2,5); // Fatal error: Uncaught Exception: We don't allow over 5 power
 #or
 
     try{
-        echo mycolor("blue");
+        echo mycolour("blue");
     }catch(Exception $e){
         echo $e;   // Exception: Ohh! I hate blue color in /tmp/hHIpnS7LAh.php:4
     }
-
 
 
 

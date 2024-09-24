@@ -127,7 +127,7 @@ echo substr_replace($greeting,"Hello",0,7)  , "<br/>"; // Hello Myanmar
 
 // -----------------------
 
-// => ftrim() function [ဘယ်ညာ spaceများကိုဖျက်]
+// => trim() function [ဘယ်ညာ spaceများကိုဖျက်]
 // => trim(string,characters) Function  [ဘယ်ညာ စာသားများကိုဖျက် , အလယ်စာသားများကို ဖျက်လို့မရ]
 
 $title = " Welcome to My Country ";

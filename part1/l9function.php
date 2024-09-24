@@ -1,6 +1,6 @@
 <?php
 
-// User Defined Function 
+// User Defined Function [Regullar Function]
 // function name(){
 //     code to be executed;
 // }

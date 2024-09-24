@@ -169,7 +169,7 @@ switch($phone){
         break;
     case "samsung":
         echo "My fav mobile is samsung";
-
+        break;
     default :
         echo "I love keypad";
 }
