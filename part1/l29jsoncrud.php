@@ -6,15 +6,15 @@
 
 // => Read
 
-    foreach($datasde as $datas){
-        // echo "<pre>".print_r($datas,true)."</pre>";
+    // foreach($datasde as $datas){
+    //     // echo "<pre>".print_r($datas,true)."</pre>";
 
-        foreach($datas as $key=>$data){
-            echo $key . " = " . $data . "<br/>";
-        }
+    //     foreach($datas as $key=>$data){
+    //         echo $key . " = " . $data . "<br/>";
+    //     }
 
-        echo '<hr/>';
-    }
+    //     echo '<hr/>';
+    // }
 
 // -------------------------------------------------------------------
 
@@ -74,11 +74,35 @@
 // -------------------------------------------------------------------
 
 // => Delete 
-    // $idxs = [];
+    $idxs = [];
 
-    // foreach($datasde as $key=>$datas){
-    //     echo "<pre>".print_r(,true)."</pre>";
-    // }
+// select index to delete
+    foreach($datasde as $key=>$datas){
+        // echo "<pre>".print_r($datas,true)."</pre>";
+       if($datas["id"] === 10){ // 10 is id number
+        $idxs[] = $key; // index number = 9
+       }
+    }
+
+    // delete value from array
+
+    foreach($idxs as $idx){
+        unset($datasde[$idx]); 
+    }
+
+    // do save
+    file_put_contents('l29studentdb.json',json_encode($datasde));
+
+
+    foreach($datasde as $datas){
+        // echo "<pre>".print_r($datas,true)."</pre>";
+
+        foreach($datas as $key=>$data){
+            echo $key . " = " . $data . "<br/>";
+        }
+
+        echo '<hr/>';
+    }
 
 
 
